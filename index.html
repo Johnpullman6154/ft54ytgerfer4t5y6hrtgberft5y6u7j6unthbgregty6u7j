@@ -1,0 +1,53 @@
+<html>
+
+  
+  
+  
+<head>
+
+
+ENABLE POPUPS OR <body onclick="openAboutBlack()">CLICK HERE</body>
+
+
+</head>
+
+<script>
+openAboutBlack()
+function openAboutBlack() {
+  let win = window.open();
+  let url = window.location.href;
+  let iframe = win.document.createElement("iframe");
+  let faviconLink = win.document.createElement("link");
+  iframe.style.position = "fixed";
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.border = "none";
+  iframe.style.top = "0";
+  iframe.style.bottom = "0";
+  iframe.style.left = "0";
+  iframe.style.right = "0";
+  iframe.style.margin = "0";
+  iframe.style.padding = "0";
+  iframe.style.overflow = "hidden";
+  iframe.style.backgroundColor = "#000";
+  iframe.src = "/dashboard.html";
+  if (!localStorage.getItem("tabName")) {
+    win.document.title = "Google Slides";
+  } else {
+    win.document.title = localStorage.getItem("tabName");
+  }
+  faviconLink.rel = 'shortcut icon';
+  if (localStorage.getItem("favicon")) {
+    faviconLink.href = localStorage.getItem("favicon");
+  } else {
+    faviconLink.href = "";
+  }
+  win.document.head.appendChild(faviconLink);
+  win.document.body.appendChild(iframe);
+  location.replace("https://classroom.google.com");
+}
+
+
+</script>
+
+</html>
