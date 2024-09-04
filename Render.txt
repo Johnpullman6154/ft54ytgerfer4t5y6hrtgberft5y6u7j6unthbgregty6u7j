@@ -1,0 +1,13 @@
+Repository : https://github.com/cjbkdbjkdghfyg/chilibowlflash
+
+Branch : Main
+
+Root Directory : None
+
+Build Command : $
+
+Publish Directory : .
+
+Auto Deploy : Auto
+
+Build Filter's : None
