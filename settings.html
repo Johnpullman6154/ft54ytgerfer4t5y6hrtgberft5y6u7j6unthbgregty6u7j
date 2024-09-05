@@ -1,1 +1,153 @@
-Soon... :33
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GhostGate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #1a1a1a; /* Very dark grey */
+            overflow: hidden;
+            text-align: center;
+            padding: 10px 0;
+
+		a {
+		font: arial;
+		}
+		
+        }
+        .navbar a {
+	    font: arial;
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #555; /* Darker grey on hover */
+        }
+
+        /* Rest of your styles */
+        .game-button {
+            background-color: #696969; /* Slate Grey */
+            border: #2F4F4F;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px; /* Curved edges */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .game-button:hover {
+            background-color: #2F4F4F; /* Darker grey on hover */
+        }
+        p, h1, h2 {
+            color: white;
+        }
+        h3 {
+            color: grey;
+
+	h4 {
+	    size: 7px;
+	}
+
+	h5 {
+            size: 4px;
+	}
+		
+        }
+        body {
+            background: linear-gradient(to bottom, #999999, #000000);
+            height: 500vh;
+            margin: 0;
+        }
+        /* For the particles background */
+        #tsparticles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html"><bold>Home</bold></a>
+        <a href="/mediamisc/credits.html"><bold>Credits</bold></a>
+        <a href="miscellaneous.html"><bold>Miscellaneous</bold></a>
+    </div>
+
+    <!-- Particle Background -->
+    <div id="tsparticles"></div>
+    <script>
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: {
+                    value: 100
+                },
+                size: {
+                    value: 3
+                },
+                move: {
+                    speed: 1
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                }
+            },
+            interactivity: {
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Rest of the page content -->
+    <div style="margin:0 auto;text-align:center">
+        <p>Welcome to GhostGate Settings Page, This is here for  changing The background colors, cloaking the tab, and much more!</p>
+	    <h4>Current Version: 0.2 (Beta)</h4>
+    </div>
+
+    <!-- Add your game buttons and other content here -->
+    <!-- Example -->
+    <div style="margin:0 auto;text-align:center">
+        <button class="game-button" onclick="location.href='alien.html'">Alien Hominid</button>
+
+
+
+
+    <p>
+      ----------------------------------------------------------------
+    </p>
+
+
+	    <p><bold>More Comming Soon...</bold></p>
+
+        <!-- More game buttons... -->
+    </div>
+
+</body>
+</html>
