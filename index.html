@@ -1,51 +1,88 @@
+
 <!DOCTYPE html>
-<html lang="en">
+
+
+<head>
+	 <title>
+   GhostGate
+  </title>
+
+	<style>
+
+		.game-button {
+ 		 background-color: #696969; /* Slate Grey */
+ 		 border: #2F4F4F;
+ 		 color: white;
+ 		 padding: 15px 32px;
+		  text-align: center;
+ 		 text-decoration: none;
+ 		 display: inline-block;
+ 		 font-size: 16px;
+ 		 margin: 4px 2px;
+  		cursor: pointer;
+		  border-radius: 12px; /* Curved edges */
+  		transition: background-color 0.3s ease; /* Smooth transition */
+		}
+
+		.game-button:hover {
+ 		 background-color: #2F4F4F; /* Darker green on hover */
+		}
+
+
+		p {
+		color: white ;
+		}
+
+		h1 {
+		color: white ;
+		}
+
+		h2 {
+		color: white ;
+		}
+
+		h3 {
+		color: grey ;
+		}
+
+		a {
+		color: cream ;
+		}
+
+		
+		body {
+background :
+		linear-gradient(to bottom, #A9A9A9, #A9A9A9) ;
+		height: 100vh;
+		margin: 0;
+
+		}
+		
+	</style>
+	
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4146748834676749"
+     crossorigin="anonymous"></script>
+	
+</head>
+
+  <body>
+     <!-- Div content -->
+<div style="margin:0 auto;text-align:center">
+	
+    <p>Welcome to GhostGate, This is a web page dedicated to providing Games For School Times :3. Along with providing Security and safety to our many users.</p>
+    <p>Everything <i>should</i> work. If something goes wrong please report an error to the <a href="https://forms.gle/8CKajL3qBN6pijDC6">Forms.</a> Thanks and Enjoy.</p>
+	
+	<!-- Div align in the middle -->
+      <div style="margin-left:auto;margin-right:auto;text-align:center">
+         
+      </div>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GhostGate</title>
-
-    <!-- Include the tsparticles library -->
+    <title>Particle Background</title>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.min.js"></script>
-
     <style>
-        /* Styling for game buttons */
-        .game-button {
-            background-color: #696969;
-            border: #2F4F4F;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 12px;
-            transition: background-color 0.3s ease;
-        }
-
-        .game-button:hover {
-            background-color: #2F4F4F;
-        }
-
-        p, h1, h2 {
-            color: white;
-        }
-
-        h3 {
-            color: grey;
-        }
-
-        body {
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(to bottom, #A9A9A9, #A9A9A9);
-            overflow: hidden;
-        }
-
-        /* Style for particle background */
         #tsparticles {
             position: absolute;
             width: 100%;
@@ -53,50 +90,63 @@
             top: 0;
             left: 0;
             z-index: -1;
-            display: none; /* Hidden initially */
-        }
-
-        /* Style for the enable particles button */
-        #enableParticlesButton {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background-color: #696969;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            z-index: 100;
-        }
-
-        #enableParticlesButton:hover {
-            background-color: #2F4F4F;
         }
     </style>
 </head>
-
 <body>
-
-    <!-- Enable particles button -->
-    <button id="enableParticlesButton" onclick="enableParticles()">Enable Particles</button>
-
-    <!-- Particle background -->
     <div id="tsparticles"></div>
+    <script>
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: {
+                    value: 100
+                },
+                size: {
+                    value: 3
+                },
+                move: {
+                    speed: 1
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                }
+            },
+            interactivity: {
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
 
-    <!-- Main content -->
-    <div style="margin: 0 auto; text-align: center; position: relative; z-index: 1;">
-        <p>Welcome to GhostGate, a web page dedicated to providing Games For School Times. Along with providing security and safety to our users.</p>
-        <p>Everything <i>should</i> work. If something goes wrong, please report an error to the <a href="https://forms.gle/8CKajL3qBN6pijDC6">Forms</a>. Thanks and enjoy!</p>
+	<body>
+    <div id="tsparticles"></div>
+</body>
 
-        <!-- Game buttons -->
-        <h3>Flash Games</h3>
-        <button class="game-button" onclick="location.href='alien.html'">Alien Hominid</button>
-        <button class="game-button" onclick="location.href='ageofwar.html'">Age Of War</button>
-        <button class="game-button" onclick="location.href='appleshoot.html'">Apple Shooter</button>
-        <button class="game-button" onclick="location.href='assroid.html'">Asteroids</button>
+	<head>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.min.js"></script>
+</head>
+
+	
+	  </div>
+	  
+	  <!-- Div content -->
+<div style="margin:0 auto;text-align:center">
+<p>----------------------------------------------------------------------</p>
+<h3>Flash Games</h3>
+
+<button class="game-button" onclick="location.href='alien.html'">Alien Hominid</button>
+<button class="game-button" onclick="location.href='ageofwar.html'">Age Of War</button>
+<button class="game-button" onclick="location.href='appleshoot.html'">Apple Shooter</button>
+<button class="game-button" onclick="location.href='assroid.html'">Asteroids</button>
 <button class="game-button" onclick="location.href='bigadventure.html'">Abobbos Big Adventure</button>
 <button class="game-button" onclick="location.href='bloxorz.html'">Bloxorz</button>
 <button class="game-button" onclick="location.href='bloodyrage.html'">Bloody Rage</button>
@@ -230,50 +280,13 @@
 		  </footer>
 		  
 		  </body>
-        <!-- Add more game buttons as needed -->
-    </div>
+	  
 
-    <!-- tsParticles initialization script -->
-    <script>
-        function enableParticles() {
-            // Show the particle container
-            document.getElementById("tsparticles").style.display = "block";
-
-            // Load particles
-            tsParticles.load("tsparticles", {
-                particles: {
-                    number: {
-                        value: 100
-                    },
-                    size: {
-                        value: 3
-                    },
-                    move: {
-                        speed: 1
-                    },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#ffffff",
-                        opacity: 0.4,
-                        width: 1
-                    }
-                },
-                interactivity: {
-                    events: {
-                        onhover: {
-                            enable: true,
-                            mode: "repulse"
-                        }
-                    }
-                }
-            });
-
-            // Disable the button after particles are enabled
-            document.getElementById("enableParticlesButton").disabled = true;
-            document.getElementById("enableParticlesButton").innerText = "Particles Enabled";
-        }
-    </script>
-</body>
-
+<!-- Div align in the middle -->
+      <div style="margin-left:auto;margin-right:auto;text-align:center">
+         
+      </div>
+	
+	  </div>	  
 </html>
+
