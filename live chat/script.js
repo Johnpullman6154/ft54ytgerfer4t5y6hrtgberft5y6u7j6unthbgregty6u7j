@@ -1,26 +1,15 @@
 const socket = io();
 
-function login() {
-    const username = document.getElementById('username').value;
-    if (username) {
-        socket.emit('login', username);
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('chat').style.display = 'block';
-    }
-}
-
-function sendMessage() {
-    const message = document.getElementById('messageInput').value;
+document.getElementById('send-button').addEventListener('click', () => {
+    const message = document.getElementById('message-input').value;
     if (message) {
-        socket.emit('message', message);
-        document.getElementById('messageInput').value = '';
+        socket.emit('chat message', message);
+        document.getElementById('message-input').value = '';
     }
-}
+});
 
-socket.on('message', (data) => {
-    const messages = document.getElementById('messages');
+socket.on('chat message', (msg) => {
     const messageElement = document.createElement('div');
-    messageElement.textContent = `${data.username}: ${data.message}`;
-    messages.appendChild(messageElement);
-    messages.scrollTop = messages.scrollHeight;
+    messageElement.textContent = msg;
+    document.getElementById('chat-messages').appendChild(messageElement);
 });
