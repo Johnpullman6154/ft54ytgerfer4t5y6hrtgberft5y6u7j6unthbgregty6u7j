@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GhostGate</title>
+    <title>GhostGate | Dashboard</title>
     <meta charset="UTF-8">
+        <link id="dynamic-favicon" rel="icon" href="https://cdn.glitch.global/02fca343-4c8f-4742-ae54-4b9120f8ac29/G-removebg-preview.png?v=1726346726720">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
         /* Navbar Styles */
         .navbar {
-            background-color: #1a1a1a; /* Very dark grey */
+            background-color: #4B0082; /* Dark Purple */
             overflow: hidden;
             text-align: center;
-            padding: 10px 0;
-
-		a {
-		font: Comic Sans MC;
-		}
-		
+            padding: 15px 20px; /* Adjusted height */
+            position: fixed; /* Make it floating */
+            width: calc(100% - 20px); /* 10px away from the sides */
+            top: 10px; /* Moved up but not touching the top */
+            left: 10px; /* 10px from the left */
+            right: 10px; /* 10px from the right */
+            border-radius: 20px; /* Smooth side edges */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Floating effect with shadow */
         }
+
         .navbar a {
-	    font: Comic Sans MC;
+            font-family: 'Comic Sans MS', sans-serif;
             float: left;
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 20px;
+            padding: 8px 16px;
             text-decoration: none;
-            font-size: 17px;
-            transition: background-color 0.3s ease;
-        }
-        .navbar a:hover {
-            background-color: #555; /* Darker grey on hover */
+            font-size: 16px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
-        /* Rest of your styles */
+        .navbar a:hover {
+            color: #DA70D6; /* Light Purple */
+            text-shadow: 0 0 10px #9400D3; /* Glow effect */
+        }
+
+        /* Game Button Styles */
         .game-button {
-            background-color: Black; /* Slate Grey */
-            border: #2F4F4F;
+            background-color: #000000; /* Black */
+            border: 2px solid #2F4F4F; /* Dark border */
             color: white;
             padding: 15px 32px;
             text-align: center;
@@ -45,103 +51,130 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            border-radius: 12px; /* Curved edges */
-            transition: background-color 0.3s ease; /* Smooth transition */
+            border-radius: 12px;
+            transition: color 0.3s ease;
         }
+
         .game-button:hover {
-            background-color: #696969; /* Darker grey on hover */
+            background-color:  #A533FF; /* No grey fade on background */
         }
-        p, h1, h2 {
-            color: Black;
-	    size: 8px;
-	    font: Comic Sans MC;
-        }
-        h3 {
-            color: grey;
-	    font: Comic Sans MC;
 
-	h4 {
-	    size: 7px;
-	    font: Comic Sans MC;
-	}
+        /* Text Styles with White Outlines (not for navbar or buttons) */
+        p, h1, h2, h3, h4, h5 {
+            font-family: 'Comic Sans MS', sans-serif;
+            color: White; /* Black text */
+      }
+      
+      a {
+        color: red;
+      }
 
-	h5 {
-            size: 10px;
-	    font: Arial Black;
-	}
-		
+        h5 {
+            font-family: 'Arial Black', sans-serif;
         }
+
+        /* Custom Mouse Pointer (Plus symbol) */
         body {
-            background: linear-gradient(to bottom , #999999, #888888);
-            height: 100vh;
+            cursor: crosshair; /* Changes cursor to plus/cross symbol */
+            background-color: #6A0DAD; /* Darker Purple */
             margin: 0;
+            padding-bottom: 50px;
         }
-        /* For the particles background */
-        #tsparticles {
-            position: absolute;
-            width: 100%;
+
+        /* Enable scrolling */
+        html, body {
             height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
+            overflow-y: auto;
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #4B0082; /* Dark purple track (behind the scroll bar) */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #9400D3; /* Lighter purple scrollbar handle */
+            border-radius: 10px; /* Roundness of the scrollbar handle */
+            border: 3px solid #4B0082; /* Darker border around the handle */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #DA70D6; /* Lighter purple on hover */
+        }
+
+        /* Particle dots for background */
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: moveDots 20s linear infinite;
+            z-index: -1; /* Dots behind all content */
+        }
+
+        @keyframes moveDots {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Dynamic dots setup */
+        .dot:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .dot:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Container for the content */
+        .game-container {
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 100px; /* Ensure space for scrolling */
+            padding-top: 80px; /* To avoid content overlapping with navbar */
+        }
+
     </style>
 
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.min.js"></script>
+    <script>
+        // Function to generate dots for background animation
+        window.onload = function() {
+            const body = document.body;
+            for (let i = 0; i < 100; i++) {
+                let dot = document.createElement("div");
+                dot.className = "dot";
+                dot.style.width = dot.style.height = Math.random() * 5 + 3 + "px"; /* Smaller dots */
+                dot.style.top = Math.random() * window.innerHeight + "px";
+                dot.style.left = Math.random() * window.innerWidth + "px";
+                dot.style.animationDuration = Math.random() * 10 + 10 + "s"; /* Slower drop */
+                body.appendChild(dot);
+            }
+        }
+    </script>
 </head>
 <body>
+
     <!-- Navbar -->
     <div class="navbar">
-        <a href="/mediamisc/credits.html"><bold><arial>Credits</arial></bold></a>
-        <a href="settings.html"><bold><arial>Settings</arial></bold></a>
-        <a href="miscellaneous.html"><bold><arial>Miscellaneous</arial></bold></a>
-	<a href="javascript:(function () {var a = document.createElement('script');a.src = 'data:text/javascript;base64,dmFyIGw9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcigibGlua1tyZWwqPSdpY29uJ10iKXx8ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgibGluayIpO2wudHlwZT0iaW1hZ2UveC1pY29uIixsLnJlbD0ic2hvcnRjdXQgaWNvbiI7dmFyIGM9cHJvbXB0KCJTZWxlY3QgYSB0YWIgY2xvYWtcbjEuIENhbnZhc1xuMi4gZS1oYWxscGFzc1xuMy4gTmV3IFRhYiIpOzE9PWM/KGwuaHJlZj0iaHR0cHM6Ly9oYXJyaXNvbmJ1cmcuaW5zdHJ1Y3R1cmUuY29tL2Zhdmljb24uaWNvIixkb2N1bWVudC50aXRsZT0iRGFzaGJvYXJkIik6Mj09Yz8obC5ocmVmPSJodHRwczovL2VkdXNwaXJlc29sdXRpb25zLm9yZy93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOS9jcm9wcGVkLWZhdmljb24tMjcweDI3MC0xLTE1MHgxNTAucG5nIixkb2N1bWVudC50aXRsZT0iRGlnaXRhbCBIYWxsIFBhc3MgfCBlLUhhbGwgUGFzcyB8IEVkdXNwaXJlIFNvbHV0aW9ucyIpOjM9PWMmJihsLmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQkFBQUFBUUNBWUFBQUFmOC85aEFBQUEvVWxFUVZSNDJxMlMwUTNDTUF4RUdZRVJHSUZQMUZKMEpFWGlrdzFnQTlnQU5xQWJ3Q2FNd0FnZG9TTkFIcFZSRTdVSUlTS2QxRHErczMzTzZPOUgwbmd1ZHl6azY3bjhvMFY1eitVdk02MG5IOGtMK1cwZ05KQUcwT1J5aDE1eUpyY2o2UnRRYUtqMVYvVlFoZmIzTTJreWhJZ2NrcXRXb0R4QkppSFRha29jMk96aC9vZ1hJT29Da3dxVlowUUsrUTJFeElzR1FlYTNXQkNwM3dJV0pLbjlYMVk5czFkMDFvMmxBdUQyazBDOGN5bVRwbVlvNEJ0eXZDbDM3M3B3NnM2R0J4RE1SQVRUUXNSN1YyZ2l1SXdJZDdhQnRLT3ZIaEpDNlZaeWxmMnZrVFhGbmJpNmpmdXJWUzVDb2RHblk3TmprcjBKWnNjbkcrZXY1d2wxQnVrcWM0Q0I3Z0FBQUFCSlJVNUVya0pnZ2c9PSIsZG9jdW1lbnQudGl0bGU9Ik5ldyBUYWIiKTs=';document.body.appendChild(a);}())" class="bookmarklet"><bold><arial>Website Name</arial></bold></a>
-	<a href="Cloak.html"><bold><arial>Cloak</arial></bold><a/>
+        <a href="/mediamisc/credits.html">Credits</a>
+        <a href="settings.html">Settings</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
     </div>
 
-    <!-- Particle Background -->
-    <div id="tsparticles"></div>
-    <script>
-        tsParticles.load("tsparticles", {
-            particles: {
-                number: {
-                    value: 100
-                },
-                size: {
-                    value: 3
-                },
-                move: {
-                    speed: 1
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.4,
-                    width: 1
-                }
-            },
-            interactivity: {
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "repulse"
-                    }
-                }
-            }
-        });
-    </script>
-
-    <!-- Rest of the page content -->
-    <div style="margin:0 auto;text-align:center">
+    <!-- Content Section -->
+    <div class="game-container">
         <p>Welcome to GhostGate, This is a web page dedicated to providing Games For School Times :3. Along with providing Security and safety to our many users.</p>
         <p>Everything <i>should</i> work. If something goes wrong, please report an error to the <a href="https://forms.gle/8CKajL3qBN6pijDC6">Forms.</a> Thanks and Enjoy.</p>
-	    <h4>Current Version: 0.2 (Beta)</h4>
-	    <h5><bold>Game of the week is <a href="hardestgame2.html">Worlds hardest game 2</a></bold></h5>
-    </div>
+        <h4>Current Version: 0.2 (Beta)</h4>
+        <h5>Game of the week is <a href="hardestgame2.html">World's hardest game 2</a></h5>
 
-    <!-- Add your game buttons and other content here -->
-    <!-- Example -->
     <div style="margin:0 auto;text-align:center">
 <button class="game-button" onclick="location.href='Geometry%20dash/index.html'">Geomtery Dash</button>
 <button class="game-button" onclick="location.href='alien.html'">Alien Hominid</button>
@@ -271,3 +304,6 @@
 
 </body>
 </html>
+
+
+
