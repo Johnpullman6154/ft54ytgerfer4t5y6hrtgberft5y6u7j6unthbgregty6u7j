@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GhostGate | Dashboard</title>
+    <meta charset="UTF-8">
+    <link id="dynamic-favicon" rel="icon" href="G-removebg-preview.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #4B0082; /* Dark Purple */
+            overflow: hidden;
+            text-align: center;
+            padding: 15px 20px; /* Adjusted height */
+            position: fixed; /* Make it floating */
+            width: calc(100% - 20px); /* 10px away from the sides */
+            top: 10px; /* Moved up but not touching the top */
+            left: 10px; /* 10px from the left */
+            right: 10px; /* 10px from the right */
+            border-radius: 20px; /* Smooth side edges */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Floating effect with shadow */
+        }
+
+        .navbar a {
+            font-family: 'Comic Sans MS', sans-serif;
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #DA70D6; /* Light Purple */
+            text-shadow: 0 0 10px #9400D3; /* Glow effect */
+        }
+
+        /* Game Button Styles */
+        .game-button {
+            background-color: #000000; /* Black */
+            border: 2px solid #2F4F4F; /* Dark border */
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .game-button:hover {
+            background-color:  #A533FF; /* No grey fade on background */
+        }
+
+        /* Text Styles with White Outlines (not for navbar or buttons) */
+        p, h1, h2, h3, h4, h5 {
+            font-family: 'Comic Sans MS', sans-serif;
+            color: White; /* Black text */
+        }
+      
+        a {
+            color: red;
+        }
+
+        h5 {
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        /* Custom Mouse Pointer (Plus symbol) */
+        body {
+            cursor: crosshair; /* Changes cursor to plus/cross symbol */
+            background-color: #6A0DAD; /* Darker Purple */
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        /* Enable scrolling */
+        html, body {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #4B0082; /* Dark purple track (behind the scroll bar) */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #9400D3; /* Lighter purple scrollbar handle */
+            border-radius: 10px; /* Roundness of the scrollbar handle */
+            border: 3px solid #4B0082; /* Darker border around the handle */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #DA70D6; /* Lighter purple on hover */
+        }
+
+        /* Container for the content */
+        .game-container {
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 100px; /* Ensure space for scrolling */
+            padding-top: 80px; /* To avoid content overlapping with navbar */
+        }
+
+        /* Particle.js container */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #6A0DAD; /* Darker Purple */
+            z-index: -1; /* Particles behind all content */
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        window.onload = function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 100,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#ffffff'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#ffffff',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 6,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'repulse'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 400,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Particle.js container -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/mediamisc/credits.html">Credits</a>
+        <a href="settings.html">Settings</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
+    </div>
