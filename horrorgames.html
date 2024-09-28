@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GhostGate | HorrorGames</title>
+    <meta charset="UTF-8">
+        <link id="dynamic-favicon" rel="icon" href="G-removebg-preview.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #4B0082; /* Dark Purple */
+            overflow: hidden;
+            text-align: center;
+            padding: 15px 20px; /* Adjusted height */
+            position: fixed; /* Make it floating */
+            width: calc(100% - 20px); /* 10px away from the sides */
+            top: 10px; /* Moved up but not touching the top */
+            left: 10px; /* 10px from the left */
+            right: 10px; /* 10px from the right */
+            border-radius: 20px; /* Smooth side edges */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Floating effect with shadow */
+        }
+
+        .navbar a {
+            font-family: 'Comic Sans MS', sans-serif;
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #DA70D6; /* Light Purple */
+            text-shadow: 0 0 10px #9400D3; /* Glow effect */
+        }
+
+        /* Game Button Styles */
+        .game-button {
+            background-color: #000000; /* Black */
+            border: 2px solid #2F4F4F; /* Dark border */
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .game-button:hover {
+            background-color:  #A533FF; /* No grey fade on background */
+        }
+
+        /* Text Styles with White Outlines (not for navbar or buttons) */
+        p, h1, h2, h3, h4, h5 {
+            font-family: 'Comic Sans MS', sans-serif;
+            color: White; /* Black text */
+      }
+      
+      a {
+        color: red;
+      }
+
+        h5 {
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        /* Custom Mouse Pointer (Plus symbol) */
+        body {
+            cursor: crosshair; /* Changes cursor to plus/cross symbol */
+            background-color: #6A0DAD; /* Darker Purple */
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        /* Enable scrolling */
+        html, body {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #4B0082; /* Dark purple track (behind the scroll bar) */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #9400D3; /* Lighter purple scrollbar handle */
+            border-radius: 10px; /* Roundness of the scrollbar handle */
+            border: 3px solid #4B0082; /* Darker border around the handle */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #DA70D6; /* Lighter purple on hover */
+        }
+
+        /* Particle dots for background */
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: moveDots 20s linear infinite;
+            z-index: -1; /* Dots behind all content */
+        }
+
+        @keyframes moveDots {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Dynamic dots setup */
+        .dot:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .dot:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Container for the content */
+        .game-container {
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 100px; /* Ensure space for scrolling */
+            padding-top: 80px; /* To avoid content overlapping with navbar */
+        }
+
+    </style>
+
+    <script>
+        // Function to generate dots for background animation
+        window.onload = function() {
+            const body = document.body;
+            for (let i = 0; i < 100; i++) {
+                let dot = document.createElement("div");
+                dot.className = "dot";
+                dot.style.width = dot.style.height = Math.random() * 5 + 3 + "px"; /* Smaller dots */
+                dot.style.top = Math.random() * window.innerHeight + "px";
+                dot.style.left = Math.random() * window.innerWidth + "px";
+                dot.style.animationDuration = Math.random() * 10 + 10 + "s"; /* Slower drop */
+                body.appendChild(dot);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/mediamisc/credits.html">Credits</a>
+        <a href="settings.html">Settings</a>
+        <a href="music-Central.html">Music-Central</a>
+    </div>
+
+    <!-- Content Section -->
+    <div class="game-container">
+        <p>The Horror Page With Horror Games...</p>
+        <p>Everything <i>should</i> work. If something goes wrong, please report an error to the <a href="https://forms.gle/8CKajL3qBN6pijDC6">Forms.</a> Thanks and Enjoy.</p>
+        <h4>Current Horror Games : 2</h4>
+
+    <div style="margin:0 auto;text-align:center">
+<button class="game-button" onclick="location.href='FNAF/2/index.html'">FNAF 2</button>
+<button class="game-button" onclick="location.href='FNAF/3/index.html'">FNAF 3</button>
+
+
+
+
+
+    <p>
+      ----------------------------------------------------------------
+    </p>
+
+
+	    <p><bold>Request a <a href="https://forms.gle/EncrjZXHMZsmueH59">Game</a></bold></p>
+                   
+      <button class="game-button" onclick="location.href='EmulatedGames/index.html'">Page 2</button>
+  
+
+        <!-- More game buttons... -->
+    </div>
+
+</body>
+</html>
+
+
 
