@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GhostGate | Credits</title>
+    <meta charset="UTF-8">
+      <link id="dynamic-favicon" rel="icon" href="G-removebg-preview.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #4B0082; /* Dark Purple */
+            overflow: hidden;
+            text-align: center;
+            padding: 15px 20px;
+            position: fixed;
+            width: calc(100% - 20px);
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
+        .navbar a {
+            font-family: 'Comic Sans MS', sans-serif;
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #DA70D6;
+            text-shadow: 0 0 10px #9400D3;
+        }
+
+        /* Settings Button Styles */
+        .settings-button {
+            background-color: rgba(48, 25, 52, 0.8); /* Dark purple, 80% transparent */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .settings-button:hover {
+            background-color: rgba(48, 25, 52, 1); /* Fully opaque on hover */
+        }
+
+        p, h1, h2, h3, h4, h5 {
+            font-family: 'Comic Sans MS', sans-serif;
+            color: White;
+        }
+
+        h5 {
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        body {
+            cursor: crosshair;
+            background-color: #6A0DAD;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #4B0082;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #9400D3;
+            border-radius: 10px;
+            border: 3px solid #4B0082;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #DA70D6;
+        }
+
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: moveDots 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveDots {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .dot:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .dot:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .game-container {
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 100px;
+            padding-top: 80px;
+        }
+      
+      select.settings-dropdown {
+            background-color: rgba(48, 25, 52, 0.8); /* Dark purple, 80% transparent */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: crosshair;
+            transition: background-color 0.3s ease;
+            appearance: none;
+            width: 240px; /* To match the button size */
+            text-align: center;
+        }
+
+        select.settings-dropdown:hover {
+            background-color: rgba(48, 25, 52, 1); /* Fully opaque on hover */
+        }
+
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="settings.html">Settings</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
+    </div>
+
+    <!-- Content Section -->
+    <div class="game-container">
+     <h1>Update 1.21</h1>
+	<p>Added New Music Sounds Coming Soon :)</p>
+	<p>Added Bitlife.</p>
+  <p>Added Horror and Emulated game Pages.</p>
+      <p>Updates Will be Mostly Every Week if not earlier - Poly ;)</p>
+
+        <div style="margin:0 auto;text-align:center">
+
+
+          
+
+
+          
+        </div>
+
+        <p>More Coming Soon...</p>
+    </div>
+
+</body>
+</html>
