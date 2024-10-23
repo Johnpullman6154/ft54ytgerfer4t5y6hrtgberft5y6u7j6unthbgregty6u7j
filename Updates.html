@@ -148,6 +148,23 @@
             background-color: rgba(48, 25, 52, 1); /* Fully opaque on hover */
         }
 
+  </style>
+  
+      <script>
+        // Function to generate dots for background animation
+        window.onload = function() {
+            const body = document.body;
+            for (let i = 0; i < 100; i++) {
+                let dot = document.createElement("div");
+                dot.className = "dot";
+                dot.style.width = dot.style.height = Math.random() * 5 + 3 + "px";
+                dot.style.top = Math.random() * window.innerHeight + "px";
+                dot.style.left = Math.random() * window.innerWidth + "px";
+                dot.style.animationDuration = Math.random() * 10 + 10 + "s";
+                body.appendChild(dot);
+            }
+        }
+    </script>
 
 </head>
 <body>
@@ -163,7 +180,7 @@
     <!-- Content Section -->
     <div class="game-container">
      <h1>Update 1.21</h1>
-	<p>Added New Music Sounds Coming Soon :)</p>
+	<p>Added New Music, More Sounds Coming Soon :)</p>
 	<p>Added Bitlife.</p>
   <p>Added Horror and Emulated game Pages.</p>
       <p>Updates Will be Mostly Every Week if not earlier - Poly ;)</p>
