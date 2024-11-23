@@ -1,111 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .login-container {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
-        .error {
-            color: red;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <div class="error" id="error-message"></div>
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <label>
-            <input type="checkbox" id="rememberMe"> Remember Me
-        </label>
-        <button onclick="login()">Login</button>
-    </div>
-
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
-        const correctUsername = "test";
-        const correctPassword = "test15#$863@#4@w4Rr52Er5^4E53TG3rw3te356e335764tt667^%5654rt55tr4fHYhtG3t5Yt4gRy6ujRuMNHbrgeHJnhbgjbgvwDfQDfbNHloIJHgRHnHBGtest";
-
-        function setCookie(cname, cvalue, exdays) {
-            const d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-
-        function getCookie(cname) {
-            const name = cname + "=";
-            const decodedCookie = decodeURIComponent(document.cookie);
-            const ca = decodedCookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) === 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function login() {
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            const errorMessage = document.getElementById("error-message");
-            const rememberMe = document.getElementById("rememberMe").checked;
-
-            if (username === correctUsername && password === correctPassword) {
-                if (rememberMe) {
-                    setCookie("username", username, 7); // Remember for 7 days
-                }
-                window.location.href = "dashboard.html"; // Redirect to dashboard.html
-            } else {
-                errorMessage.textContent = "User not found!";
-            }
-        }
-
-        // Check for remembered username
-        window.onload = function() {
-            const rememberedUsername = getCookie("username");
-            if (rememberedUsername) {
-                document.getElementById("username").value = rememberedUsername;
-                document.getElementById("rememberMe").checked = true;
-            }
-        };
+        win = window.open();
+        win.document.body.style.margin = "0";
+        win.document.body.style.height = "100vh";
+        html =
+          `
+        <style>
+          * { margin: 0; padding: 0; border: none; }
+          body, iframe { height: 100vh; width: 100vw; }
+          iframe { height: 96vh; }
+          header { display: flex; height: 4vh; justify-content: center; }
+          button { 
+            margin-right: 100px; 
+            height: 100%; 
+            aspect-ratio: 1 / 1; 
+            background: lightgrey; /* Gray background for buttons */
+            border-radius: 5px; /* Optional: rounded corners */
+            cursor: pointer; 
+            font-size: 24px; 
+            display: flex; /* Center the icon */
+            align-items: center; 
+            justify-content: center; 
+          }
+          button i { 
+            color: black; 
+            text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white; /* Outline effect */
+          }
+          .overlay { position: absolute; top: 30px; left: 10px; color: black; font-size: 24px; }
+          .ghostgate { position: absolute; bottom: 10px; right: 10px; color: rgba(128, 128, 128, 0.75); font-size: 14px; }
+        </style>
+        <script>
+        </`+
+        `script>
+        <header>
+          <button id="goBack"><i class="fas fa-home"></i></button>
+          <button id="reload"><i class="fas fa-sync-alt"></i></button>
+        </header>
+        <div class="overlay">Ghostifie</div>
+        <div class="ghostgate">© Ghostgate</div>
+        <iframe id="ghostifie"></iframe>`;
+        
+        win.document.querySelector("html").innerHTML = html;
+        win.eval(`let selenite = document.getElementById("ghostifie"); console.log(selenite); selenite.setAttribute("src", "dashboard.html"); console.log(selenite); document.getElementById("goBack").addEventListener("click", function () { selenite.contentDocument.location.href = selenite.contentDocument.location.origin; }); document.getElementById("reload").addEventListener("click", function () { selenite.contentDocument.location.href = selenite.contentDocument.location.href; })`);
+        
+        location.href = "https://google.com";
+        close();
     </script>
-</body>
+    <style>
+      body {
+        background-color: dark grey;
+        color: black;
+        text-align: center;
+        align-content: center;
+      }
+    </style>
+  </head>
 </html>
