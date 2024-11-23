@@ -4,7 +4,7 @@ function checkLogin() {
 
     // If the user is not logged in (no cookie), redirect to the login page
     if (!rememberedUsername) {
-        window.location.href = "index.html"; // Redirect to login page if not logged in
+        window.location.href = "gay.html"; // Redirect to login page if not logged in
     }
 }
 
