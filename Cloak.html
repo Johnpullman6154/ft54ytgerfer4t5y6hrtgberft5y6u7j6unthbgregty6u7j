@@ -1,17 +1,51 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
         win = window.open();
         win.document.body.style.margin = "0";
         win.document.body.style.height = "100vh";
         html =
           `
-        <style>*{margin:0;padding:0;border:none}body,iframe{height:100vh;width:100vw}iframe{height:96vh}header{display:flex;height:4vh;justify-content:center;}button{margin-right:100px;height:100%;aspect-ratio: 1 / 1}#reload{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24'%3E%3Cpath d='M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z'/%3E%3C/svg%3E");background-size:cover;}#goBack{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24'%3E%3Cpath d='M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z'/%3E%3C/svg%3E");background-size:cover;}</style><script>
+        <style>
+          * { margin: 0; padding: 0; border: none; }
+          body, iframe { height: 100vh; width: 100vw; }
+          iframe { height: 96vh; }
+          header { display: flex; height: 4vh; justify-content: center; }
+          button { 
+            margin-right: 100px; 
+            height: 100%; 
+            aspect-ratio: 1 / 1; 
+            background: lightgrey; /* Gray background for buttons */
+            border-radius: 5px; /* Optional: rounded corners */
+            cursor: pointer; 
+            font-size: 24px; 
+            display: flex; /* Center the icon */
+            align-items: center; 
+            justify-content: center; 
+          }
+          button i { 
+            color: black; 
+            text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white; /* Outline effect */
+          }
+          .overlay { position: absolute; top: 30px; left: 10px; color: black; font-size: 24px; }
+          .ghostgate { position: absolute; bottom: 10px; right: 10px; color: rgba(128, 128, 128, 0.75); font-size: 14px; }
+        </style>
+        <script>
         </`+
-        `script><header><button id=goBack></button><button id=reload></button></header><iframe id=selenite></iframe>`;
+        `script>
+        <header>
+          <button id="goBack"><i class="fas fa-home"></i></button>
+          <button id="reload"><i class="fas fa-sync-alt"></i></button>
+        </header>
+        <div class="overlay">Ghostifie</div>
+        <div class="ghostgate">© Ghostgate</div>
+        <iframe id="ghostifie"></iframe>`;
+        
         win.document.querySelector("html").innerHTML = html;
-        win.eval(`let selenite = document.getElementById("selenite");console.log(selenite);selenite.setAttribute("src", "${location.origin}");console.log(selenite);document.getElementById("goBack").addEventListener("click", function () {selenite.contentDocument.location.href = selenite.contentDocument.location.origin;});document.getElementById("reload").addEventListener("click", function () {selenite.contentDocument.location.href = selenite.contentDocument.location.href;})`);
-        location.href="https://google.com";
+        win.eval(`let selenite = document.getElementById("ghostifie"); console.log(selenite); selenite.setAttribute("src", "dashboard.html"); console.log(selenite); document.getElementById("goBack").addEventListener("click", function () { selenite.contentDocument.location.href = selenite.contentDocument.location.origin; }); document.getElementById("reload").addEventListener("click", function () { selenite.contentDocument.location.href = selenite.contentDocument.location.href; })`);
+        
+        location.href = "https://google.com";
         close();
     </script>
     <style>
